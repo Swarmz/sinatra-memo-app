@@ -14,6 +14,7 @@ Sinatraで作成したシンプルなメモ管理アプリ
     ```
     git clone https://github.com/Swarmz/sinatra-memo-app.git
     cd sinatra-memo-app
+    git checkout initial-version
     ```
 
 2. 依存関係をインストール
