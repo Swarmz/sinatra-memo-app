@@ -26,7 +26,7 @@ def read_memo_list
 end
 
 def delete_memo(filename, id)
-  memos = JSON.parse(File.read(filename))
+  memos = JSON.parse(File.read(filename), symbolize_names: true)
   memos.reject! { |memo| memo[:id] == id }
   File.write(filename, JSON.pretty_generate(memos))
 end
