@@ -1,12 +1,12 @@
-<form action="/memos/<%= @memo["id"] %>" method="post">
+<form action="/memos/<%= @memo[:id] %>" method="post">
   <div class="form-container">
     <input type="hidden" name="_method" value="patch">
 
     <label for="title">タイトル</label>
-    <input type="text" id="title" name="title" value="<%= @memo["title"] %>">
+    <input type="text" id="title" name="title" value="<%= @memo[:title] %>">
 
     <label for="body">内容</label>
-    <textarea class="text-box" id="body" name="body"><%= @memo["body"] %></textarea>
+    <textarea class="text-box" id="body" name="body"><%= @memo[:body] %></textarea>
   </div>
     <button id="submit-button" type="submit">保存</button>
 </form>
