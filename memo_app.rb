@@ -23,7 +23,7 @@ def store_memo(filename, title, body)
 end
 
 def read_memo_list
-  File.open(MEMOS_FILE, 'a') { |file| file.puts '[]' } unless File.exist?(MEMOS_FILE)
+  File.open(MEMOS_FILE, 'w') { |file| file.puts '[]' } unless File.exist?(MEMOS_FILE)
   JSON.parse(File.read(MEMOS_FILE), symbolize_names: true)
 end
 
