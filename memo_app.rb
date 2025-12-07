@@ -22,7 +22,7 @@ def store_memo(filename, title, body)
   memos.last
 end
 
-def read_memo_list
+def read_memos
   File.open(MEMOS_FILE, 'w') { |file| file.puts '[]' } unless File.exist?(MEMOS_FILE)
   JSON.parse(File.read(MEMOS_FILE), symbolize_names: true)
 end
@@ -34,7 +34,7 @@ def delete_memo(filename, id)
 end
 
 before do
-  @memos = read_memo_list
+  @memos = read_memos
 end
 
 before '/memos/:id*' do
