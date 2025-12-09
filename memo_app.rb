@@ -17,7 +17,7 @@ end
 
 def store_memo(filename, title, body)
   memos = JSON.parse(File.read(filename), symbolize_names: true)
-  memos << { id: SecureRandom.uuid, title: title, body: body }
+  memos << { id: SecureRandom.uuid, title:, body: }
   File.write(filename, JSON.pretty_generate(memos))
   memos.last
 end
