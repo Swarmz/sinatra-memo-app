@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 2rem;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+ul {
+  font-size: 1.5rem;
+  padding-inline-start: 0px;
+}
+
+a:link, a:visited {
+  color: black;
+}
+
+.memo-list:hover, .memo-list:active {
+  color: gray;
+}
+
+input, textarea {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+label {
+  font-size: 1.5rem;
+}
+
+.text-box {
+  max-width: 75%;
+  min-width: 20rem;
+  min-height: 20rem;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 1rem;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background: white;
+  border: 1px solid black;
+  padding: 0.5rem;
+  border-radius: 3px;
+  min-width: 5rem;
+}
+
+.button:hover {
+  background: rgb(233, 233, 233);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > input,
+.form-container > textarea {
+  padding: 1rem;
+}
+
+#home {
+  text-decoration: none;
+  all: unset;
+  cursor: pointer;
+  font-size: 3rem;
+  padding: 1rem;
+}
+
+#home:hover {
+  color: gray;
+}
+
+#form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#submit-button {
+  display: block;
+  margin: 1rem auto 0 auto;
+}
+
+#memo-title {
+  text-decoration: underline;
+}
+
+
