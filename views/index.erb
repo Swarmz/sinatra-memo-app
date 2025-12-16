@@ -1,6 +1,6 @@
 <ul>
   <% @memos.each do |memo| %>
-    <li><a class="memo-list" href="/memos/<%= memo[:id] %>"><%= h memo[:title] %></a></li>
+    <li><a class="memo-list" href="/memos/<%= memo["id"] %>"><%= h memo["title"] %></a></li>
   <% end %>
 </ul>
 <a href="/memos/new" class="button">追加</a>

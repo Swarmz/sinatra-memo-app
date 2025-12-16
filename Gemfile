@@ -10,6 +10,8 @@ gem 'puma'
 
 gem 'rackup'
 
+gem 'pg'
+
 group :development do
   gem 'erb_lint', require: false
   gem 'rerun', require: false
