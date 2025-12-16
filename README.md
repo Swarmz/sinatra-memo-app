@@ -34,30 +34,15 @@ brew services start postgresql
 ```
 sudo apt update
 sudo apt install postgresql
-sudo systemctl start postgresql
+sudo service postgresql start
 ```
 
-### 4. データベースユーザーの作成
-PostgreSQL には、アプリで使用するユーザー（role）が必要です。
+### 4. データベースの作成
 ```
-sudo -i -u postgres
-psql
-```
-以下を実行して、ユーザーを作成します。
-```
-CREATE ROLE memo_user WITH LOGIN CREATEDB;
-```
-終了します。
-```
-\q
-exit
-```
-### 5. データベースの作成
-```
-createdb memo_app -U memo_user
+createdb memo_app
 ```
 
-### 6. 環境変数の設定（任意）
+### 5. 環境変数の設定（任意）
 通常のローカル環境では、特別な設定をしなくてもアプリは動作します。  
 必要に応じて、以下の環境変数を設定してください。
 ```
@@ -69,12 +54,12 @@ export MEMO_APP_DB_USER=memo_user
 PostgreSQL がパスワード認証を要求する場合のみ設定してください。  
 設定しない場合は、デフォルト値が使用されます。
 
-### 7. アプリの起動
+### 6. アプリの起動
 ```
 ruby memo_app.rb
 ```
 
-### 8. ブラウザからアクセス
+### 7. ブラウザからアクセス
 ```
 http://localhost:4567
 ```
