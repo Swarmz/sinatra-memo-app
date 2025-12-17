@@ -5,8 +5,8 @@ require 'rack/protection'
 require 'pg'
 
 DB = PG.connect(
-  dbname: ENV['MEMO_APP_DB_NAME'] || 'memo_app',
-  user: ENV['MEMO_APP_DB_USER'] || ENV['USER'],
+  dbname: ENV.fetch('MEMO_APP_DB_NAME', 'memo_app'),
+  user: ENV.fetch('MEMO_APP_DB_USER', ENV['USER']),
   password: ENV['MEMO_APP_DB_PASSWORD']
 )
 
