@@ -4,38 +4,62 @@ Sinatraで作成したシンプルなメモ管理アプリ
 
 ## 必要環境
 
-* Ruby（使用しているバージョン例：3.3.10）
+* Ruby（3.4.7）
 * Bundler
+* PostgreSQL
 
-## アプリの起動手順
+## セットアップ手順
 
-1. リポジトリをクローン
+### 1. リポジトリをクローン
 
-    ```
-    git clone https://github.com/Swarmz/sinatra-memo-app.git
-    cd sinatra-memo-app
-    ```
+```
+git clone https://github.com/Swarmz/sinatra-memo-app.git
+cd sinatra-memo-app
+```
 
-2. 依存関係をインストール
+### 2. 依存関係をインストール
 
-    ```
-    bundle install
-    ```
+```
+bundle install
+```
 
-3. アプリを起動
+### 3. PostgreSQL のインストールと起動
+#### macOS（Homebrew）
+```
+brew install postgresql
+brew services start postgresql
+```
 
-    ```
-    ruby memo_app.rb
-    ```
+#### Linux
+```
+sudo apt update
+sudo apt install postgresql
+sudo service postgresql start
+```
 
-    または、`rerun` を使用する場合：
+### 4. データベースの作成
+```
+createdb memo_app
+```
 
-    ```
-    bundle exec rerun memo_app.rb
-    ```
+### 5. 環境変数の設定（任意）
+通常のローカル環境では、特別な設定をしなくてもアプリは動作します。  
+必要に応じて、以下の環境変数を設定してください。
+```
+export MEMO_APP_DB_NAME=memo_app
+export MEMO_APP_DB_USER=memo_user
+# export MEMO_APP_DB_PASSWORD=your_password
+```
+※ MEMO_APP_DB_PASSWORD は、
+PostgreSQL がパスワード認証を要求する場合のみ設定してください。  
+設定しない場合は、デフォルト値が使用されます。
 
-4. ブラウザからアクセス
+### 6. アプリの起動
+```
+ruby memo_app.rb
+```
 
-    ```
-    http://localhost:4567
-    ```
+### 7. ブラウザからアクセス
+```
+http://localhost:4567
+```

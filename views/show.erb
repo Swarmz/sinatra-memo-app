@@ -1,12 +1,12 @@
-<h2 id="memo-title"><%= h @memo[:title] %></h2>
-<div class="text-box"><%= h @memo[:body] %></div>
+<h2 id="memo-title"><%= h @memo["title"] %></h2>
+<div class="text-box"><%= h @memo["body"] %></div>
 <div id="form-buttons">
-  <form action="/memos/<%= @memo[:id] %>" method="post">
+  <form action="/memos/<%= @memo["id"] %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <button class="button" type="submit">削除</button>
   </form>
 
-  <form action="/memos/<%= @memo[:id] %>/edit" method="get">
+  <form action="/memos/<%= @memo["id"] %>/edit" method="get">
     <button class="button" type="submit">変更</button>
   </form>
 </div>
